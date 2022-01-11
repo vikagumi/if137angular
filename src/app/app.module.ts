@@ -40,6 +40,8 @@ import { ThirdComponent } from './components/forTest/third/third.component';
 import { FlightsInfoService } from 'src/app/services/flights-info.service';
 import { CalendarOfPricesItemComponent } from './components/calendar-of-prices/calendar-of-prices-item/calendar-of-prices-item.component';
 import { CalendarOfPricesComponent } from './components/calendar-of-prices/calendar-of-prices.component';
+import { FlightPriceTrendsComponent } from './components/flight-price-trends/flight-price-trends.component';
+
 
 @NgModule({
   declarations: [
@@ -55,6 +57,7 @@ import { CalendarOfPricesComponent } from './components/calendar-of-prices/calen
     FirstComponent,
     SecondComponent,
     ThirdComponent,
+    FlightPriceTrendsComponent,
   ],
   imports: [
     MatIconModule,

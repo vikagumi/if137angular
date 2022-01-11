@@ -1,0 +1,61 @@
+.info-card{
+    background-color: #3f51b5;
+    color: white;
+    width: 60%;
+    margin: auto;
+
+    &-title{
+       text-align: center;
+    }
+}
+
+.flights-card{
+   padding: 0px;
+
+   &-container{
+       display: flex;
+       width: 100%;
+   }
+   &-left{
+       width: 30%;
+       border-right: 1px solid gray;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: space-around;
+
+       &-price{
+           font-size: 20px;
+           font-weight: bold;
+       }
+       &-details{
+           font-size: 18px;
+       }
+   }
+
+   &-info{
+       margin: 10px;
+
+       &-img{
+        position: relative;
+
+        &-departure{
+            position: absolute;
+            font-size: 10px;
+            left: 70px;
+            bottom: 10px;
+        }
+        &-arrive{
+            position: absolute;
+            font-size: 10px;
+            left: 200px;
+            bottom: 10px;
+        }
+    }
+   }
+}
+.plane-img{
+    width: 30%;
+    height: 10%;
+    margin-left: 50px;
+}

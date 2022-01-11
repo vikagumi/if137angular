@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class FlightsInfoService {
-  baseUrl: string;
+  baseUrl: string = "https://api.travelpayouts.com/";
 
   constructor(
     @Inject(DOCUMENT) private document: Document,
@@ -45,6 +45,23 @@ export class FlightsInfoService {
       'get',
       this.baseUrl +
         '/prices/week-matrix?currency=usd&origin=LED&destination=HKT&show_to_affiliates=true&depart_date=2022-01-17&return_date=2022-01-24&token=51b362c72de38be9bcfdc31c8339c019',
+      requestOptions
+    );
+  }
+
+  getFlightPriceTrends(){
+    const headerDict = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'x-access-token': '51b362c72de38be9bcfdc31c8339c019',
+    };
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict),
+    };
+    return this.httpClient.request(
+      'get',
+      this.baseUrl +
+        'v1/prices/calendar?depart_date=2021–11&origin=MOW&destination=BCN&calendar_type=departure_date&token=51b362c72de38be9bcfdc31c8339c019',
       requestOptions
     );
   }
