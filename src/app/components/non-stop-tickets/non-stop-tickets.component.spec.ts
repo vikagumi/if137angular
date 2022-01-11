@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TransfersComponent } from './transfers.component';
+import { NonStopTicketsComponent } from './non-stop-tickets.component';
 
-describe('TransfersComponent', () => {
-  let component: TransfersComponent;
-  let fixture: ComponentFixture<TransfersComponent>;
+describe('NonStopTicketsComponent', () => {
+  let component: NonStopTicketsComponent;
+  let fixture: ComponentFixture<NonStopTicketsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TransfersComponent ]
+      declarations: [ NonStopTicketsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TransfersComponent);
+    fixture = TestBed.createComponent(NonStopTicketsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

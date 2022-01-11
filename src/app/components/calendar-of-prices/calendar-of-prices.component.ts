@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FlightsInfoService } from 'src/app/services/flights-info.service';
+import { Store } from '@ngxs/store';
+import { CalendarOfPricesStateModel } from 'src/app/models/calendar-of-prices.model';
+import { FetchCalendarOfPrices } from 'src/app/store/flight-info.action';
+import { FlightInfoState } from 'src/app/store/flight-info.state';
 
 @Component({
   selector: 'app-calendar-of-prices',
@@ -7,13 +10,14 @@ import { FlightsInfoService } from 'src/app/services/flights-info.service';
   styleUrls: ['./calendar-of-prices.component.scss'],
 })
 export class CalendarOfPricesComponent implements OnInit {
-  constructor(private flightInfoService: FlightsInfoService) {}
+  constructor(private store: Store) {}
 
-  prices: any = [];
+  calendatData: CalendarOfPricesStateModel;
 
   ngOnInit(): void {
-    this.flightInfoService
-      .RequestGetCalendarOfPrices()
-      .subscribe(({ data }: any) => (this.prices = data));
+    this.store.dispatch(new FetchCalendarOfPrices());
+    this.store
+      .select(FlightInfoState.calendarOfPrices)
+      .subscribe((state) => (this.calendatData = state));
   }
 }

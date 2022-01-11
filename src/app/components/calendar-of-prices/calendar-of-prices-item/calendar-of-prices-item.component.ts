@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { CalendarOfPricesModel } from 'src/app/models/calendar-of-prices.model';
 
 @Component({
   selector: 'app-calendar-of-prices-item',
@@ -6,7 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./calendar-of-prices-item.component.scss'],
 })
 export class CalendarOfPricesItemComponent {
-  @Input() data: any = {};
+  @Input() data: CalendarOfPricesModel;
+  @Input() currency: string;
 
   isActive: boolean = false;
 
