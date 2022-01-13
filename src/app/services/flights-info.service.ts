@@ -54,17 +54,17 @@ export class FlightsInfoService {
     );
   }
 
-  getFlightPriceTrends(){
+  getFlightPriceTrends(origin: any, destination: any, departDate: any, returnDate: any, currency:any ): Observable<any>{
     const headerDict = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'x-access-token': '51b362c72de38be9bcfdc31c8339c019',
+      'x-access-token': '14bd9a873621d433eb0d10b3a2a7cceb',
     };
     const requestOptions = {
       headers: new HttpHeaders(headerDict),
     };
     return this.http.get(
-        'v1/prices/calendar?depart_date=2021–11&origin=MOW&destination=BCN&calendar_type=departure_date&token=51b362c72de38be9bcfdc31c8339c019',
+      `/v1/prices/calendar?origin=${origin}&destination=${destination}&departure_date=${departDate}&return_date=${returnDate}&currency=${currency}&calendar_type=departure_date&token=14bd9a873621d433eb0d10b3a2a7cceb`,
       requestOptions
     );
   }
